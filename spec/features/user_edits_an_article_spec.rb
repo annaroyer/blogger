@@ -24,7 +24,7 @@ describe 'As a user' do
         click_on 'Update Article'
 
         expect(current_path).to eq(article_path(article))
-        expect(page).to have_field('better title')
+        expect(page).to have_content('better title')
         expect(page).to have_content('better body')
       end
     end
