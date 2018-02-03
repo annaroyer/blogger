@@ -11,5 +11,11 @@ describe 'As a user' do
       expect(page).to have_link(article_1.title)
       expect(page).to have_link(article_2.title)
     end
+
+    it 'I can see a create new article link' do
+      visit '/articles'
+
+      expect(page).to have_link('Create a New Article')
+    end
   end
 end
