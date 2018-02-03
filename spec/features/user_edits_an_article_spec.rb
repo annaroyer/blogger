@@ -26,6 +26,7 @@ describe 'As a user' do
         expect(current_path).to eq(article_path(article))
         expect(page).to have_content('better title')
         expect(page).to have_content('better body')
+        expect(page).to have_content("Article #{article.title} was updated")
       end
     end
   end
