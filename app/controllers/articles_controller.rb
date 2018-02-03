@@ -16,5 +16,6 @@ class ArticlesController < ApplicationController
     @article.title = params[:article][:title]
     @article.body = params[:article][:body]
     @article.save
+    redirect_to @article
   end
 end
