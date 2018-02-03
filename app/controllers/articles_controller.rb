@@ -12,6 +12,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
+    @article = Article.new
+    @article.title = params[:article][:title]
+    @article.body = params[:article][:body]
+    @article.save
   end
 end
