@@ -4,7 +4,7 @@ describe 'As a user' do
   context 'when I click link to create a new article from articles index' do
     context 'and I fill in a title and body' do
       it 'then I can see the article I created' do
-        visit article_path
+        visit articles_path
 
         click_link "Create a New Article"
 
