@@ -10,7 +10,7 @@ describe 'As a user' do
       click_link "Delete"
 
       expect(current_path).to eq(articles_path)
-      expect(page).to have_content(article_1.title)
+      expect(page).to have_content(article_2.title)
       expect(page).to_not have_content(article_1.title)
     end
   end
