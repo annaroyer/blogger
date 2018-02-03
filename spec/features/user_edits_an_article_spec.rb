@@ -8,9 +8,9 @@ describe 'As a user' do
       visit article_path(article)
       click_on 'Edit'
 
-      expect(current_path).to eq(edit_article(article))
-      expect(page).to have_content(article.title)
-      expect(page).to have_content(article.body)
+      expect(current_path).to eq(edit_article_path(article))
+      expect(page).to have_field('Title', with: article.title)
+      expect(page).to have_field('Body', with: article.body)
     end
 
     context 'and I edit the title and body' do
@@ -21,10 +21,10 @@ describe 'As a user' do
         click_on 'Edit'
         fill_in('article[title]', with: 'better title')
         fill_in('article[body]', with: 'better body')
-        click_on 'submit'
+        click_on 'Update Article'
 
         expect(current_path).to eq(article_path(article))
-        expect(page).to have_content('better title')
+        expect(page).to have_field('better title')
         expect(page).to have_content('better body')
       end
     end
