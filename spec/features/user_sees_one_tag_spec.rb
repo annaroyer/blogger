@@ -10,6 +10,7 @@ describe 'As a user' do
       click_link 'news'
 
       expect(page).to have_content(tag.name)
+      expect(page).to have_link(article.title)
     end
   end
 end
