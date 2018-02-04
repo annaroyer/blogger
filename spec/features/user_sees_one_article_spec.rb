@@ -19,4 +19,21 @@ describe "As a user" do
       expect(page).to have_content(comment_2.body)
     end
   end
+
+  context "and I fill in a comment form" do
+    it "I can see the comment on the article show" do
+      article = Article.create!(title: 'weather report', body: 'bright and sunny')
+
+      visit articles_path
+
+      fill_in "comment[author_name]", with: "ME!"
+      fill_in "comment[body]", with: "So many thoughts on this article"
+      click_on "Submit"
+
+      expect(current_path).to eq(article_path(article))
+      expect(page).to have_content("Post a Comment")
+      expect(page).to have_content("ME!")
+      expect(page).to have_content("So many thoughts on this article")
+    end
+  end
 end
