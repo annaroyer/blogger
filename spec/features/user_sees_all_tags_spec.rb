@@ -14,7 +14,7 @@ describe 'As a user' do
              ]
 
       visit articles_path
-      click_link 'tags'
+      click_link 'Tags'
 
       expect(current_path).to eq(tags_path)
       tags.each do |tag|
