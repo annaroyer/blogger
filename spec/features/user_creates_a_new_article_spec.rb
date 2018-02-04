@@ -10,6 +10,8 @@ describe 'As a user' do
 
         expect(current_path).to eq(new_article_path)
 
+        save_and_open_page
+
         fill_in "article[title]", with: "New Title!"
         fill_in "article[body]", with: "New Body!"
         click_on "Create Article"
