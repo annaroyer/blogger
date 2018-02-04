@@ -18,6 +18,7 @@ describe 'As a user' do
         expect(page).to have_content("New Title!")
         expect(page).to have_content("New Body!")
         expect(page).to have_content("Article 'New Title!' was created")
+        expect(page).to have_content("ruby technology")
       end
     end
   end
