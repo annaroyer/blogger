@@ -24,7 +24,7 @@ describe "As a user" do
     it "I can see the comment on the article show" do
       article = Article.create!(title: 'weather report', body: 'bright and sunny')
 
-      visit articles_path
+      visit article_path(article)
 
       fill_in "comment[author_name]", with: "ME!"
       fill_in "comment[body]", with: "So many thoughts on this article"
